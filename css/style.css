@@ -397,3 +397,13 @@ label {
 .content-slide img {
     width: 70%;
 }
+
+#fp-nav ul li .fp-tooltip {
+    width: auto;
+    opacity: 1;
+}
+
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active+.fp-tooltip {
+    font-weight: bold;
+}
