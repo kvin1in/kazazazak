@@ -1,22 +1,31 @@
 $(document).ready(function() {
 
+    var trigger = $('.hamburger'),
+        overlay = $('.overlay'),
+        isClosed = false;
 
+    trigger.click(function() {
+        hamburger_cross();
+    });
 
-    /* Toggle Subnav - More
-    -------------------------------------------------------------------------------*/
-    function toggle_subnav_more() {
+    function hamburger_cross() {
 
-        $('.global-nav-more, .main-overlay').click(function() {
-
-            event.preventDefault();
-            $('html').toggleClass('subnav-open');
-
-        });
-
+        if (isClosed == true) {
+            overlay.hide();
+            trigger.removeClass('is-open');
+            trigger.addClass('is-closed');
+            isClosed = false;
+        } else {
+            overlay.show();
+            trigger.removeClass('is-closed');
+            trigger.addClass('is-open');
+            isClosed = true;
+        }
     }
-    toggle_subnav_more();
 
-
+    $('[data-toggle="offcanvas"]').click(function() {
+        $('#wrapper').toggleClass('toggled');
+    });
 
 
     /* Homepage FullPage Scroll Jack Layout
